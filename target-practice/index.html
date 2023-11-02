@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+    <script src="script.js"></script>
+
+    <body style='margin : 0px; overflow: hidden;'>
+      <a-scene>
+        <a-marker type='pattern' url='./img/pattern-uoodbox.patt'>
+          <a-entity id="box01" geometry="primitive: box" src="./img/uoodbox.png"></a-entity>
+        </a-marker>
+        <a-entity id="sphere01" geometry="primitive: sphere" color="blue" scale="0.4 0.4 0.4"></a-entity>
+        <a-entity id="sphere02" geometry="primitive: sphere" color="blue" scale="0.4 0.4 0.4"></a-entity>
+        <a-entity id="sphere03" geometry="primitive: sphere" color="blue" scale="0.4 0.4 0.4"></a-entity>
+      </a-scene>
+      <a-camera>
+        <a-cursor>
+        </a-cursor>
+      </a-camera>
+    </body>
+</html>
