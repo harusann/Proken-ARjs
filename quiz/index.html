@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <title>AR.js</title>
+</head>
+<body>
+    <script src="js/ARinit.js"></script>
+    <div class="camera-space" style="margin:0px; overflow:hidden;">
+        <a-scene  vr-mode-ui="enabled: false">
+            
+            <a-assets timeout="10000">
+                <img id="img_paper" src="image/old_paper.jpg"></img>
+            </a-assets>
+
+            <a-marker marker class="game-block" id="OECU-marker" type="pattern" url='pattern/pattern-images.patt'>
+                <!-- 図形の位置 (横, 奥, 高) -->
+                <a-image id="my_btn01" src="#img_paper" position="0 0 0" scale="3 3 3" rotation="-90 0 0"></a-image>
+                <a-entity mb-text class="type-text" visible="true" position="-1 0.1 -1" rotation="-90 0 0" data-text="問題" align="center"></a-entity>
+                <a-entity mb-text class="end-text" visible="false" position="0 0.1 -0.5" rotation="-90 0 0" data-text="終了" align="center"></a-entity>
+                <a-entity mb-text class="point-text" visible="false" position="0.2 0.1 0" rotation="-90 0 0" data-text="0 / 0" align="center"></a-entity>
+
+                <a-entity mb-text class="quiz-text" visible="true" position="0.13 0.1 -0.75" rotation="-90 0 0" data-text="大阪は日本の首都か"align="left"></a-entity>
+
+                <a-circle yes-button class="yes-button" visible="true" color="#00ff00" radius="0.5" rotation="-90 0 0" position="-0.75 0.15 0.75" raycaster="objects: .clickable"></a-circle>
+                <a-entity mb-text class="yes-text" visible="true" position="-0.75 0.16 0.75" rotation="-90 0 0" data-text="YES"align="center"></a-entity>
+
+                <a-circle no-button class="no-button" visible="true" color="#ff0000" radius="0.5" rotation="-90 0 0" position="0.75 0.15 0.75" raycaster="objects: .clickable"></a-circle>
+                <a-entity mb-text class="no-text" visible="true" position="0.75 0.16 0.75" rotation="-90 0 0" data-text="NO"align="center"></a-entity>
+
+
+                <a-entity mb-text class="answer" visible="false" position="0.25 0.1 0" rotation="-90 0 0" data-text="NO" align="center"></a-entity>
+                <a-box next-button class="next-button" visible="false" color="#0000ff" position="0 0.1 0" rotation="-90 0 0" height="0.5" depth="0.01" width="1"></a-box>
+                <a-entity mb-text class="next-text" visible="false" position="0.075 0.1 0" rotation="-90 0 0" data-text="NEXT"align="center"></a-entity>
+            
+            </a-marker>
+            
+            <a-cursor visible="false"></a-cursor>
+            <a-entity camera cursor="rayOrigin: mouse;"></a-entity>
+        </a-scene>
+    </div>
+
+    <script src="js/ar_text.js"></script>
+    <div class="clear-num" style="position: fixed; top:20px; right:80px;">
+        クリア数　0 / 1
+    </div>
+</body>
