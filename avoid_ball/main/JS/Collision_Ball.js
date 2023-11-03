@@ -31,20 +31,20 @@ function circleRectangleCollision(wall){
 	return CollisionWithPoint(clamped, ballPosition);
 }
 
-// AFRAME.registerComponent('toge_ball', {
-//     tick: function () {
-//         var wall = this.el;
+AFRAME.registerComponent('toge_ball', {
+    tick: function () {
+        var wall = this.el;
 
-//         if(circleRectangleCollision(wall)) isIntersect = true;
-//         console.log("判定"+isIntersect);
-//     }
-// });
+        if(circleRectangleCollision(wall)) isIntersect = true;
+        console.log("判定"+isIntersect);
+    }
+});
 
-    // AFRAME.registerComponent('toge_ball' + 1, {
-    //     tick: function () {
-    //         var wall = this.el;
+    AFRAME.registerComponent('toge_ball' + 1, {
+        tick: function () {
+            var wall = this.el;
     
-    //         if(circleRectangleCollision(wall)) isIntersect = true;
-    //         console.log("判定：1"+isIntersect);
-    //     }
-    // });
+            if(circleRectangleCollision(wall)) isIntersect = true;
+            console.log("判定：1"+isIntersect);
+        }
+    });

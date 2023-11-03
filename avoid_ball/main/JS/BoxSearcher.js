@@ -22,19 +22,19 @@ AFRAME.registerComponent('boxm1', {
       });
     },
     //これより下は常に繰り返し実行される
-    // tick: function(delta) {
+    tick: function(delta) {
 
-    //   var marker = this.el;
+      var marker = this.el;
 
-    //   //マーカーを認識しているときのみオブジェクトが動くようにする
-    //   if(found)
-    //   {
-    //     rot = marker.getAttribute('rotation');
-    //   }
-    //   else
-    //   {
-    //     rot.x = 90;
-    //     rot.z = 0;
-    //   }
-    // },
+      //マーカーを認識しているときのみオブジェクトが動くようにする
+      if(found)
+      {
+        rot = marker.getAttribute('rotation');
+      }
+      else
+      {
+        rot.x = 90;
+        rot.z = 0;
+      }
+    },
 });
