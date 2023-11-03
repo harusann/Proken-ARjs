@@ -11,7 +11,9 @@ AFRAME.registerComponent('moveobject', {
 
     if(isIntersect)
     {
-      //console.log("GAMEOVER");
+      obj.object3D.position.x = 0.0;
+      obj.object3D.position.z = 0.0;
+      isIntersect = false;
     }
     else
     {
