@@ -53,11 +53,11 @@ function circleRectangleCollision(wall){
 	return CollisionWithPoint(clamped, ballPosition);
 }
 
-AFRAME.registerComponent('wall', {
-    tick: function () {
-        var wall = this.el;
+// AFRAME.registerComponent('wall', {
+//     tick: function () {
+//         var wall = this.el;
 
-        isIntersect = circleRectangleCollision(wall);
-        console.log("判定："+isIntersect);
-    }
-});
+//         isIntersect = circleRectangleCollision(wall);
+//         console.log("判定："+isIntersect);
+//     }
+// });
