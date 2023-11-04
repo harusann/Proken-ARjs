@@ -63,6 +63,7 @@
                     $no_text[0].setAttribute('visible', 'false');
                     is_nextClick = true;
                     is_ansClick = false;
+                    event.preventDefault();
                 }
             });
         }
@@ -87,6 +88,7 @@
                     $no_text[0].setAttribute('visible', 'false');
                     is_nextClick = true;
                     is_ansClick = false;
+                    event.preventDefault();
                 }
             });
         }
@@ -108,6 +110,7 @@
                         $yes_text[0].setAttribute('visible', 'true');
                         $no_text[0].setAttribute('visible', 'true');
                         is_ansClick = true;
+                        event.preventDefault();
                     }
                     else {
                         change_text($point_text[0], '' + correct_answers + ' / ' + quiz.length)
@@ -118,6 +121,7 @@
                         $end_text[0].setAttribute('visible', 'true');
                         $point_text[0].setAttribute('visible', 'true');
                         $clear_num[0].innerHTML = 'クリア数　1 / 1';
+                        event.preventDefault();
                     }
                     is_nextClick = false;
                 }
