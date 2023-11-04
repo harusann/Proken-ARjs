@@ -1,3 +1,15 @@
 .hide {
     display: none;
 }
+
+.yes-text {
+    pointer-events: none;
+}
+
+.no-text {
+    pointer-events: none;
+}
+
+.next-text {
+    pointer-events: none;
+}
