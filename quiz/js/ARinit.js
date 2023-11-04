@@ -65,9 +65,9 @@
                     $yes_text[0].setAttribute('visible', 'false');
                     $no_button[0].setAttribute('visible', 'false');
                     $no_text[0].setAttribute('visible', 'false');
+                    is_ansClick = false;
                     await sleep(500);
                     is_nextClick = true;
-                    is_ansClick = false;
                 }
             });
         }
@@ -90,9 +90,9 @@
                     $no_button[0].setAttribute('visible', 'false');
                     $yes_text[0].setAttribute('visible', 'false');
                     $no_text[0].setAttribute('visible', 'false');
+                    is_ansClick = false;
                     await sleep(500);
                     is_nextClick = true;
-                    is_ansClick = false;
                     event.preventDefault();
                 }
             });
@@ -114,6 +114,7 @@
                         $no_button[0].setAttribute('visible', 'true');
                         $yes_text[0].setAttribute('visible', 'true');
                         $no_text[0].setAttribute('visible', 'true');
+                        is_nextClick = false;
                         await sleep(500);
                         is_ansClick = true;
                     }
@@ -126,7 +127,6 @@
                         $end_text[0].setAttribute('visible', 'true');
                         $point_text[0].setAttribute('visible', 'true');
                     }
-                    is_nextClick = false;
                 }
             });
         }
