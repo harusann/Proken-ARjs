@@ -72,7 +72,7 @@
         init: () => {
             $no_button[0].addEventListener('click', (event) => {
                 if (is_ansClick === true) {
-                    if(quiz[quiz_num]['answer'] === 'No') {
+                    if(quiz[quiz_num]['answer'] === 'no') {
                         console.log('正解');
                         correct_answers++;
                     }

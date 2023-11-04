@@ -46,6 +46,11 @@
     </div>
 
     <script src="js/ar_text.js"></script>
+    <script>
+        (() => {
+            change_text(document.getElementsByClassName("quiz-text")[0], quiz[0]['quiz']);
+        })();
+    </script>
     <div class="clear-num" style="position: fixed; top:20px; right:80px;">
         クリア数　0 / 1
     </div>
