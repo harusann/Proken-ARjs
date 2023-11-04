@@ -93,7 +93,6 @@
                     is_ansClick = false;
                     await sleep(500);
                     is_nextClick = true;
-                    event.preventDefault();
                 }
             });
         }
