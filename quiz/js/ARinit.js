@@ -21,6 +21,10 @@
         }
     ]
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    };
+
     let quiz_num = 0;
     let correct_answers = 0;
     let is_nextClick = true;
@@ -46,91 +50,84 @@
 
     AFRAME.registerComponent('yes-button', {
         init: () => {
-            $yes_button[0].addEventListener('click', (event) => {
-                $yes_button[0].addEventListener('mouseup', (event2) => {                
-                    if(is_ansClick === true) {
-                        if(quiz[quiz_num]['answer'] === 'yes'){
-                            console.log('正解');
-                            correct_answers++;
-                        }
-                        else console.log('不正解')
-                        change_text($quiz_text[0], quiz[quiz_num]['answer']);
-                        change_text($type_text[0], '答え');
-                        $next_button[0].setAttribute('visible', 'true');
-                        $next_text[0].setAttribute('visible', 'true');
-                        $yes_button[0].setAttribute('visible', 'false');
-                        $yes_text[0].setAttribute('visible', 'false');
-                        $no_button[0].setAttribute('visible', 'false');
-                        $no_text[0].setAttribute('visible', 'false');
-                        is_nextClick = true;
-                        is_ansClick = false;
-                        event.preventDefault();
+            $yes_button[0].addEventListener('click', async (event) => {            
+                if(is_ansClick === true) {
+                    if(quiz[quiz_num]['answer'] === 'yes'){
+                        console.log('正解');
+                        correct_answers++;
                     }
-                });
+                    else console.log('不正解')
+                    change_text($quiz_text[0], quiz[quiz_num]['answer']);
+                    change_text($type_text[0], '答え');
+                    $next_button[0].setAttribute('visible', 'true');
+                    $next_text[0].setAttribute('visible', 'true');
+                    $yes_button[0].setAttribute('visible', 'false');
+                    $yes_text[0].setAttribute('visible', 'false');
+                    $no_button[0].setAttribute('visible', 'false');
+                    $no_text[0].setAttribute('visible', 'false');
+                    await sleep(500);
+                    is_nextClick = true;
+                    is_ansClick = false;
+                }
             });
         }
     });
 
     AFRAME.registerComponent('no-button', {
         init: () => {
-            $no_button[0].addEventListener('click', (event) => {
-                $no_button[0].addEventListener('mouseup', (event2) => {                
-                    if (is_ansClick === true) {
-                        if(quiz[quiz_num]['answer'] === 'no') {
-                            console.log('正解');
-                            correct_answers++;
-                        }
-                        else console.log('不正解')
-                        change_text($quiz_text[0], quiz[quiz_num]['answer']);
-                        change_text($type_text[0], '答え');
-                        $next_button[0].setAttribute('visible', 'true');
-                        $next_text[0].setAttribute('visible', 'true');
-                        $yes_button[0].setAttribute('visible', 'false');
-                        $no_button[0].setAttribute('visible', 'false');
-                        $yes_text[0].setAttribute('visible', 'false');
-                        $no_text[0].setAttribute('visible', 'false');
-                        is_nextClick = true;
-                        is_ansClick = false;
-                        event.preventDefault();
+            $no_button[0].addEventListener('click', async (event) => {         
+                if (is_ansClick === true) {
+                    if(quiz[quiz_num]['answer'] === 'no') {
+                        console.log('正解');
+                        correct_answers++;
                     }
-                });
+                    else console.log('不正解')
+                    change_text($quiz_text[0], quiz[quiz_num]['answer']);
+                    change_text($type_text[0], '答え');
+                    $next_button[0].setAttribute('visible', 'true');
+                    $next_text[0].setAttribute('visible', 'true');
+                    $yes_button[0].setAttribute('visible', 'false');
+                    $no_button[0].setAttribute('visible', 'false');
+                    $yes_text[0].setAttribute('visible', 'false');
+                    $no_text[0].setAttribute('visible', 'false');
+                    await sleep(500);
+                    is_nextClick = true;
+                    is_ansClick = false;
+                    event.preventDefault();
+                }
             });
         }
     });
 
     AFRAME.registerComponent('next-button', {
         init: () => {
-            $next_button[0].addEventListener('click', (event) => {
-                $next_button[0].addEventListener('mouseup', (event2) => {                
-                    if(is_nextClick === true) {
-                        quiz_num = quiz_num + 1;
-                        if(quiz.length - 1 >= quiz_num){
-                            console.log('問題 : ' + (quiz_num + 1))
-                            change_text($quiz_text[0], quiz[quiz_num]['quiz']);
-                            change_text($type_text[0], '問題');
-                            $next_button[0].setAttribute('visible', 'false');
-                            $next_text[0].setAttribute('visible', 'false');
-                            $yes_button[0].setAttribute('visible', 'true');
-                            $no_button[0].setAttribute('visible', 'true');
-                            $yes_text[0].setAttribute('visible', 'true');
-                            $no_text[0].setAttribute('visible', 'true');
-                            is_ansClick = true;
-                            event.preventDefault();
-                        }
-                        else {
-                            change_text($point_text[0], '' + correct_answers + ' / ' + quiz.length)
-                            $quiz_text[0].setAttribute('visible', 'false');
-                            $type_text[0].setAttribute('visible', 'false');
-                            $next_button[0].setAttribute('visible', 'false');
-                            $next_text[0].setAttribute('visible', 'false');
-                            $end_text[0].setAttribute('visible', 'true');
-                            $point_text[0].setAttribute('visible', 'true');
-                            $clear_num[0].innerHTML = 'クリア数　1 / 1';
-                            event.preventDefault();
-                        }
-                        is_nextClick = false;
+            $next_button[0].addEventListener('click', async (event) => {      
+                if(is_nextClick === true) {
+                    quiz_num = quiz_num + 1;
+                    if(quiz.length - 1 >= quiz_num){
+                        console.log('問題 : ' + (quiz_num + 1))
+                        change_text($quiz_text[0], quiz[quiz_num]['quiz']);
+                        change_text($type_text[0], '問題');
+                        $next_button[0].setAttribute('visible', 'false');
+                        $next_text[0].setAttribute('visible', 'false');
+                        $yes_button[0].setAttribute('visible', 'true');
+                        $no_button[0].setAttribute('visible', 'true');
+                        $yes_text[0].setAttribute('visible', 'true');
+                        $no_text[0].setAttribute('visible', 'true');
+                        await sleep(500);
+                        is_ansClick = true;
                     }
-                });
+                    else {
+                        change_text($point_text[0], '' + correct_answers + ' / ' + quiz.length)
+                        $quiz_text[0].setAttribute('visible', 'false');
+                        $type_text[0].setAttribute('visible', 'false');
+                        $next_button[0].setAttribute('visible', 'false');
+                        $next_text[0].setAttribute('visible', 'false');
+                        $end_text[0].setAttribute('visible', 'true');
+                        $point_text[0].setAttribute('visible', 'true');
+                    }
+                    is_nextClick = false;
+                }
             });
         }
     });
