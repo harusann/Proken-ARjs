@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
     <link rel="stylesheet" href="css/index.css">
-    <title>AR.js</title>
+    <title>大阪電気通信大学クイズ</title>
 </head>
 <body>
     <script src="js/ARinit.js"></script>
@@ -34,7 +34,7 @@
                 <a-entity mb-text class="no-text" visible="true" position="0.75 0.15 0.75" rotation="-90 0 0" data-text="NO"align="center"></a-entity>
 
 
-                <a-entity mb-text class="answer" visible="false" position="0.25 0.1 0" rotation="-90 0 0" data-text="NO" align="center"></a-entity>
+                <a-entity mb-text class="answer" visible="false" position="0.25 0.1 0" rotation="-90 0 0" data-text="" align="center"></a-entity>
                 <a-box next-button class="next-button" visible="false" color="#0000ff" position="0 0.1 0" rotation="-90 0 0" height="0.5" depth="0.01" width="1" raycaster="objects: .clickable" cursor="rayOrigin: mouse"></a-box>
                 <a-entity mb-text class="next-text" visible="false" position="0.075 0.15 0" rotation="-90 0 0" data-text="NEXT"align="center"></a-entity>
             
@@ -49,6 +49,7 @@
     <script>
         (() => {
             change_text(document.getElementsByClassName("quiz-text")[0], quiz[0]['quiz']);
+            change_text(document.getElementsByClassName("answer")[0], quiz[0]['answer']);
         })();
     </script>
     <div class="clear-num" style="position: fixed; top:20px; right:80px;">
