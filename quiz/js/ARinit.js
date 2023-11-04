@@ -46,7 +46,7 @@
 
     AFRAME.registerComponent('yes-button', {
         init: () => {
-            $yes_button[0].addEventListener('mouseup', (event) => {
+            $yes_button[0].addEventListener('click', (event) => {
                 if(is_ansClick === true) {
                     if(quiz[quiz_num]['answer'] === 'yes'){
                         console.log('正解');
@@ -71,7 +71,7 @@
 
     AFRAME.registerComponent('no-button', {
         init: () => {
-            $no_button[0].addEventListener('mouseup', (event) => {
+            $no_button[0].addEventListener('click', (event) => {
                 if (is_ansClick === true) {
                     if(quiz[quiz_num]['answer'] === 'no') {
                         console.log('正解');
@@ -96,7 +96,7 @@
 
     AFRAME.registerComponent('next-button', {
         init: () => {
-            $next_button[0].addEventListener('mouseup', (event) => {
+            $next_button[0].addEventListener('click', (event) => {
                 if(is_nextClick === true) {
                     quiz_num = quiz_num + 1;
                     if(quiz.length - 1 >= quiz_num){
