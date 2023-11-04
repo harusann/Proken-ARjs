@@ -63,6 +63,7 @@
                     $no_text[0].setAttribute('visible', 'false');
                     is_nextClick = true;
                     is_ansClick = false;
+                    event.preventDefault();
                 }
             });
         }
@@ -87,6 +88,7 @@
                     $no_text[0].setAttribute('visible', 'false');
                     is_nextClick = true;
                     is_ansClick = false;
+                    event.preventDefault();
                 }
             });
         }
@@ -120,6 +122,7 @@
                         $clear_num[0].innerHTML = 'クリア数　1 / 1';
                     }
                     is_nextClick = false;
+                    event.preventDefault();
                 }
             });
         }
