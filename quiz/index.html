@@ -27,15 +27,15 @@
 
                 <a-entity mb-text class="quiz-text" visible="true" position="0.13 0.1 -0.75" rotation="-90 0 0" data-text=""align="left"></a-entity>
 
-                <a-circle yes-button class="yes-button" visible="true" color="#00ff00" radius="0.5" rotation="-90 0 0" position="-0.75 0.1 0.75" raycaster="objects: .clickable" cursor></a-circle>
+                <a-circle yes-button class="yes-button" visible="true" color="#00ff00" radius="0.5" rotation="-90 0 0" position="-0.75 0.1 0.75" raycaster="objects: .clickable" cursor="rayOrigin: mouse"></a-circle>
                 <a-entity mb-text class="yes-text" visible="true" position="-0.75 0.15 0.75" rotation="-90 0 0" data-text="YES"align="center"></a-entity>
 
-                <a-circle no-button class="no-button" visible="true" color="#ff0000" radius="0.5" rotation="-90 0 0" position="0.75 0.1 0.75" raycaster="objects: .clickable" cursor></a-circle>
+                <a-circle no-button class="no-button" visible="true" color="#ff0000" radius="0.5" rotation="-90 0 0" position="0.75 0.1 0.75" raycaster="objects: .clickable" cursor="rayOrigin: mouse"></a-circle>
                 <a-entity mb-text class="no-text" visible="true" position="0.75 0.15 0.75" rotation="-90 0 0" data-text="NO"align="center"></a-entity>
 
 
                 <a-entity mb-text class="answer" visible="false" position="0.25 0.1 0" rotation="-90 0 0" data-text="NO" align="center"></a-entity>
-                <a-box next-button class="next-button" visible="false" color="#0000ff" position="0 0.1 0" rotation="-90 0 0" height="0.5" depth="0.01" width="1" raycaster="objects: .clickable" cursor></a-box>
+                <a-box next-button class="next-button" visible="false" color="#0000ff" position="0 0.1 0" rotation="-90 0 0" height="0.5" depth="0.01" width="1" raycaster="objects: .clickable" cursor="rayOrigin: mouse"></a-box>
                 <a-entity mb-text class="next-text" visible="false" position="0.075 0.15 0" rotation="-90 0 0" data-text="NEXT"align="center"></a-entity>
             
             </a-marker>
